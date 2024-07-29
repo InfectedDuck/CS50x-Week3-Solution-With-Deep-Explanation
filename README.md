@@ -9,7 +9,7 @@ This repository contains several C programs that implement different algorithms 
 1. `runoff.c` - A program that implements a runoff election system.
 2. `tideman.c` - A program that implements the Tideman voting method.
 3. `plurality.c` - A program that implements the plurality voting method.
-4. `sort.c` - A program that demonstrates the implementation of different sorting algorithms: Bubble Sort, Merge Sort, and Selection Sort.
+4. `sort` - A program that demonstrates the implementation of different sorting algorithms: Bubble Sort, Merge Sort, and Selection Sort.
 
 ## Description
 
