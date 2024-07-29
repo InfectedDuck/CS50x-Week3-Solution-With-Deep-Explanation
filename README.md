@@ -82,10 +82,11 @@ The `sort.c` program demonstrates the implementation of different sorting algori
 #### How it Works
 
 1. The user provides an array of integers via command-line arguments.
-2. The program applies each sorting algorithm to the array:
+2. The program has several functions that apply each sorting algorithm to the array:
    - **Bubble Sort**: Repeatedly steps through the list, compares adjacent items, and swaps them if they are in the wrong order until the list is sorted.
    - **Merge Sort**: Divides the list into smaller parts, sorts each part, and then merges the sorted parts back together.
    - **Selection Sort**: Finds the minimum element from the unsorted portion of the list and moves it to the beginning.
+3. The objective is to determine which sorting algorithm is implemented in each of the provided programs.
 
 #### Key Points
 
@@ -98,6 +99,30 @@ The `sort.c` program demonstrates the implementation of different sorting algori
 - **Bubble Sort**: Identified by its simple swapping mechanism and best performance on already sorted lists.
 - **Merge Sort**: Recognizable by its consistent performance across different data arrangements and divide-and-conquer approach.
 - **Selection Sort**: Distinguished by its consistent O(n^2) performance across all scenarios.
+
+## Determining Sorting Algorithms
+
+To identify the sorting algorithm used in each program, follow these steps:
+
+### Setup and Run
+
+1. **Execute each sorting program** with different types of input data:
+   - Randomly shuffled arrays
+   - Sorted arrays
+   - Reversed arrays
+
+### Measure Runtime
+
+1. **Use a timing tool or stopwatch** to record the duration of the sorting process for each input type.
+2. **Run each program multiple times** to ensure accurate and consistent results.
+
+### Analyze Results
+
+1. **Bubble Sort**: This algorithm performs best with already sorted data, showing a significant decrease in runtime for sorted arrays compared to random or reversed arrays. It has a worst-case runtime of \( O(n^2) \) for reversed data.
+
+2. **Merge Sort**: Known for its consistent performance across different data types, Merge Sort maintains similar runtimes for random, sorted, and reversed arrays, with a time complexity of \( O(n \log n) \).
+
+3. **Selection Sort**: This algorithm exhibits a consistent runtime regardless of the initial order of the data, reflecting its \( O(n^2) \) time complexity. It usually shows slower performance compared to Merge Sort but can be faster than Bubble Sort for certain scenarios.
 
 ## Credits
 
