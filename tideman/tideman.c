@@ -174,3 +174,57 @@ void sort_pairs(void)
 }
 
 // Helper function to check for cycles in the locked graph
+bool cyclic(int start, int curr)
+{
+    if (curr == start)  // If the current candidate is the start candidate, a cycle is detected
+        return true;
+
+    // Check all candidates for a cycle
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (locked[curr][i] && cyclic(start, i))  // If a cycle is detected from the current candidate
+            return true;
+    }
+    return false;  // No cycle detected
+}
+
+// Lock pairs into the candidate graph in order, avoiding cycles
+void lock_pairs(void)
+{
+    // Iterate over all pairs and lock them if they don't create a cycle
+    for (int i = 0; i < pair_count; i++)
+    {
+        int w = pairs[i].winner;  // Index of the winner candidate
+        int l = pairs[i].loser;   // Index of the loser candidate
+        // Lock the pair if it does not create a cycle
+        if (!cyclic(w, l))
+        {
+            locked[w][l] = true;
+        }
+    }
+}
+
+// Print the winner of the election
+void print_winner(void)
+{
+    // Iterate over all candidates to find the source (candidate with no incoming edges)
+    for (int i = 0; i < candidate_count; i++)
+    {
+        bool source = true;  // Assume the candidate is a source until proven otherwise
+        // Check if the current candidate is the source
+        for (int j = 0; j < candidate_count; j++)
+        {
+            if (locked[j][i])  // If any candidate has an edge pointing to the current candidate
+            {
+                source = false;  // Current candidate is not the source
+                break;
+            }
+        }
+        // If the candidate is the source, print the winner and exit
+        if (source)
+        {
+            printf("%s\n", candidates[i]);
+            return;
+        }
+    }
+}
