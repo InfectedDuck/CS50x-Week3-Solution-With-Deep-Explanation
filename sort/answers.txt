@@ -1,0 +1,11 @@
+sort1 uses: Bubble sort
+
+How do you know?: Bubble sort has time complexety O(n) on the best case(sorted array). So when it was tesed in sorted array it took only 1.724s to run the program, while to sort random it took 6.635s, and to reversed 6.1s. Only bubble sorting among those algorithms have changing time complexity base on the case, that's why it is bubble sort algorithm.
+
+sort2 uses: Merge sort
+
+How do you know?: Merge sort is a very fast sorting algorithm(time complexity: O(nlog(n))) and also it is very stable. As it took only 1.4s for random, 1.39s for sorted, and 1.32 for reversed to sort. Those scores are best among other algoritms, therefore, it is merge sort.
+
+sort3 uses: Selection sort
+
+How do you know?: Selection sort is stable algorithm, it takes always O(n^2) time for every case. It took 3.7s to sort random, 3.3s to sort sorted, 3.5s to sort reversed. Moreover, selection sort in random text is faster than bubble sort, as it doesnt need to compare every number with each other, however due to its stable time complexity, it takes 3s too to sort sorted arrays.
